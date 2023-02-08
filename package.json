@@ -26,6 +26,13 @@
   },
   "build": {
     "appId": "xyz.guoyk.Proxied",
-    "productName": "Proxied"
+    "productName": "Proxied",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": "zip"
+    },
+    "linux": {
+      "category": "Development"
+    }
   }
 }
