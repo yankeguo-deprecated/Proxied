@@ -1,0 +1,31 @@
+{
+  "name": "proxied-app",
+  "version": "1.0.0",
+  "description": "a simple electron app for opening a website with proxy specified",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guoyk93/Proxied.git"
+  },
+  "keywords": [
+    "electron",
+    "proxy"
+  ],
+  "author": "Guo Y.K.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guoyk93/Proxied/issues"
+  },
+  "homepage": "https://github.com/guoyk93/Proxied#readme",
+  "devDependencies": {
+    "electron": "^23.0.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "xyz.guoyk.Proxied",
+    "productName": "Proxied"
+  }
+}
