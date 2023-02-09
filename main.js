@@ -1,10 +1,12 @@
 // main.js
 
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, ipcMain} = require('electron')
+const {app, BrowserWindow, ipcMain, Menu} = require('electron')
 const path = require('path')
 
-const createWelcomeWindow = () => {
+const isMac = process.platform === 'darwin'
+
+function createWelcomeWindow() {
     const mainWindow = new BrowserWindow({
         width: 400,
         height: 500,
@@ -16,6 +18,34 @@ const createWelcomeWindow = () => {
 
     mainWindow.loadFile('welcome.html')
 }
+
+function createMenu() {
+
+    const template = [
+        ...(isMac ? [{role: 'appMenu'}] : []),
+        {
+            label: 'File',
+            submenu: [
+                {
+                    label: 'New Window',
+                    accelerator: 'CmdOrCtrl+N',
+                    click() {
+                        createWelcomeWindow()
+                    }
+                },
+                {type: 'separator'},
+                (isMac ? {role: 'close'} : {role: 'quit'})
+            ]
+        },
+        {role: 'editMenu'},
+        {role: 'viewMenu'},
+        {role: 'windowMenu'},
+    ]
+
+    return Menu.buildFromTemplate(template)
+}
+
+Menu.setApplicationMenu(createMenu())
 
 app.whenReady().then(() => {
     createWelcomeWindow()
@@ -39,5 +69,5 @@ app.whenReady().then(() => {
 })
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit()
+    if (!isMac) app.quit()
 })
