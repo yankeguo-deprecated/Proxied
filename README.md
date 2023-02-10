@@ -1,6 +1,6 @@
 # Proxied
 
-a simple Electron app for opening a website with a speicifed proxy
+A simple Electron app for opening website with a specified proxy
 
 ## UI
 

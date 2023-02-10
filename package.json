@@ -1,7 +1,7 @@
 {
   "name": "proxied-app",
   "version": "1.0.1",
-  "description": "a simple electron app for opening a website with proxy specified",
+  "description": "A simple Electron app for opening website with a specified proxy",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
