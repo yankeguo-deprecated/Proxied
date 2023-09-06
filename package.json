@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/guoyk93/Proxied#readme",
   "devDependencies": {
-    "electron": "^23.0.0",
+    "electron": "^23.2.3",
     "electron-builder": "^23.6.0"
   },
   "build": {
